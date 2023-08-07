@@ -1,9 +1,8 @@
 import './App.css'
 import { Route , Routes } from 'react-router-dom'
 import Dashboard from './Dashboard'
-import Assignments from './components/Assignments'
-import Assignmentcard from './components/assignmentcard'
-import Header from './components/Header'
+import Assignments from './components/Classroom'
+
 
 
 function App() {
@@ -12,8 +11,13 @@ function App() {
     <>
     <Routes>
       <Route path='/admin' element={<Dashboard />}>
-        <Route path='assignment' element={<Assignments />}></Route>
-        <Route path='assignment/:id' element={<Assignments />}></Route>
+        <Route index path='/admin/dashboard' element={<h1 className='h-screen'>Dashboard</h1>} />
+        <Route path='classroom' element={<Assignments />} />
+        <Route path='chatroom' element={<div>chatroom</div>} />
+        <Route path='notice' element={<div>notice</div>} />
+        <Route path='activity' element={<div>activity</div>} />
+        <Route path='elibrary' element={<div>elibrary</div>} />
+        <Route path='tpo' element={<div>tpo</div>} />
       </Route>
     </Routes> 
     </>

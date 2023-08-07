@@ -9,6 +9,10 @@
   margin: 0;padding: 0;box-sizing: border-box;
 }
 
+.active{
+  @apply bg-blue-900 rounded-md
+}
+
 body{
   color: white;
   background-color: #141332;
@@ -33,10 +37,6 @@ body{
   border-radius: 100%;
 }
 
-.nav-btn:hover{
-  @apply bg-blue-600;
-  border-radius: 8px;
-}
 
 .card{
   @apply bg-slate-800;

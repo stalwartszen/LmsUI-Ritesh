@@ -3,8 +3,6 @@ import React from 'react'
 
 const ViewAssignment = () => {
 
-    
-
     return (
         <>
             <div className='flex items-center'>
