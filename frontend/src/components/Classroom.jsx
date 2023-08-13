@@ -48,13 +48,9 @@ const Classroom = () => {
                 <div className='grid grid-cols-2 gap-5 flex-1'>
                     {
                         Data.map((card) => {
-                            return <Assignmentcard card={card} />
+                            return <Assignmentcard key={card.id} card={card} />
                         })
                     }
-                </div>
-                <div className='p-8 rounded-lg bg-slate-800 flex-1'>
-                    <Outlet />
-                    {/* <ViewAssignment /> */}
                 </div>
             </div>
         </>
