@@ -20,7 +20,8 @@ function App() {
         <Route path='classroom/:id' element={<ViewAssignment />} >
           <Route index element={<Assignments />}/>
           <Route path='modules' element={<Modules />}/>
-          <Route path='modules/:id/test' element={<Testpage />}/>
+          {/* <Route path='modules/:id/test' element={<Testpage />}/> */}
+          <Route path='abc' element={<Testpage />}/>
           <Route path='lab' element={<h1>lab practical</h1>}/>
         </Route>
         <Route path='chatroom' element={<div>chatroom</div>} />

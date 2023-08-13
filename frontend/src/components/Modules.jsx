@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { ChevronDoubleDownIcon } from '@heroicons/react/24/solid'
 
 
 const Modules = () => {
@@ -38,7 +39,10 @@ const ModuleComp =({props})=>{
     return(
         <>
         <div onClick={handleAccordin} className="bg-slate-800 flex justify-between p-5 rounded-lg">
+            <div className="flex items-center">
+                <ChevronDoubleDownIcon className="w-5 opacity-20" />
              <h1 className="px-5 text-white font-medium">{name}</h1>
+            </div>
              <button 
                 onClick={()=>navigate(`/admin/classroom/${SubjectId.id}/modules/${id}/test`)}
                 className="btn-sm bg-blue-800 rounded-md">take a test
