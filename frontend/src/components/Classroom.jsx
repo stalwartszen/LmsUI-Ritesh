@@ -6,7 +6,6 @@ import Data from '../data.json'
 import { Outlet } from 'react-router-dom'
 
 const Classroom = () => {
-    const [modal, showModal] = useState(false)
 
     return (
         <>
@@ -45,7 +44,7 @@ const Classroom = () => {
 
 
             <div className='flex gap-5 py-5'>
-                <div className='grid grid-cols-2 gap-5 flex-1'>
+                <div className='grid grid-cols-4 gap-5 flex-1'>
                     {
                         Data.map((card) => {
                             return <Assignmentcard key={card.id} card={card} />

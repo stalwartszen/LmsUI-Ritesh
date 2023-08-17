@@ -5,15 +5,15 @@ import { DocumentChartBarIcon } from '@heroicons/react/24/outline'
 import { UserPlusIcon } from '@heroicons/react/24/outline'
 import { BookOpenIcon } from '@heroicons/react/24/outline'
 import React from 'react'
-import { NavLink} from 'react-router-dom'
+import { NavLink,Link} from 'react-router-dom'
 
 const Navbar = () => {
   return (
     <div className='flex justify-evenly items-center my-2 mx-[6rem] px-10'>
-        <NavLink to={'/admin/dashboard'} className='flex gap-2 p-2'>
+        <Link to={'/admin'} className='flex gap-2 p-2'>
             <ChartBarSquareIcon className='w-6' />
             <p>Dashboard</p>
-        </NavLink>
+        </Link>
         <NavLink to={'/admin/classroom'} className='flex gap-2 p-2'>
             <UsersIcon className='w-6' />
             <p>Classroom</p>

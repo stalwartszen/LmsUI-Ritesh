@@ -5,7 +5,7 @@ import Assignments from './components/Classroom'
 import { Outlet } from 'react-router-dom'
 
 
-const Dashboard = () => {
+const Layout = () => {
   return (
     <>
       <Header />
@@ -17,4 +17,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Layout

@@ -32,8 +32,8 @@ const ViewAssignment = () => {
               </button>
             </Link>
             <div className="ml-5">
-              <h1 className="text-2xl">{Dataobj.Subject}</h1>
-              <p className="text-slate-400">{Dataobj.Teacher}</p>
+              <h1 className="text-2xl">{Dataobj && Dataobj.Subject}</h1>
+              <p className="text-slate-400">{Dataobj && Dataobj.Teacher}</p>
             </div>
           </div>
           {/* <ChevronDoubleLeftIcon className='w-7'/> */}
