@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const SubmitAssignmentPopUp = () => {
-
+const SubmitAssignmentPopUp = ({props}) => {
+  const {setshow } = props
   return (
     <div className='h-screen bg-opacity-70 w-full flex justify-center items-center bg-black top-0 right-0 absolute z-[10000]'>
         <div className='p-10 bg-slate-800 flex flex-col gap-2 border-opacity-15 rounded-md'>
@@ -12,10 +12,11 @@ const SubmitAssignmentPopUp = () => {
 
           <label htmlFor="date">Choose date</label>
           <input type="date" className='p-2 border-opacity-25 outline-none rounded-md' />
-          <Link to={"/admin/classroom"}>
+        
           <button 
+            onClick={()=>setshow(false)}
             className='btn bg-blue-500 text-white'> Submit </button>
-          </Link>
+        
         </div>
 
     </div>

@@ -9,8 +9,7 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <Navbar />
-      <div className='px-[8rem]'>
+      <div className='px-[4rem] w-full h-[84vh]'>
         <Outlet />
       </div>
     </>

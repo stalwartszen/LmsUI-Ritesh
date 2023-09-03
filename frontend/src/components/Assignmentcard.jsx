@@ -2,26 +2,24 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Assignmentcard = ({card}) => {
-    const { Teacher, Subject, Time , id } = card
+    const { code, name, Objectives , id } = card
     
     return (
         <>
-            <div className="card rounded-lg">
-                <div className='flex gap-5 p-5'>
-                    <div className='bg-yellow-500 w-16 h-16 rounded-full'>
-                        <img src="" alt="" />
+            <div className="bg-slate-800 relative h-[230px] p-5 flex flex-col rounded-lg">
+                    <div className='flex items-start gap-3'>
+                        <h1 className='text-lg w-fit'>{name}</h1>
+                        <p className=' rounded-full px-5 text-sm p-2 bg-blue-900 text-white'>{code}</p>
                     </div>
-                    <div>
-                        <h1 className='text-xl'>{Subject}</h1>
-                        <p className='text-slate-300'>{Teacher}</p>
+                    <div className=''>
+                    <p className='text-slate-500 text-sm  pt-4'>
+                        <span className='text-white'>Objectives : </span>
+                        {Objectives}
+                    </p>
                     </div>
-                </div>
-                <div>
-                    <p className='text-slate-300 text-center border-t p-2'>{Time}</p>
                     <Link to={`/admin/classroom/${id}`}>
-                    <button type="button" className='bg-blue-600 p-2 rounded-b-lg w-full'>view</button>
+                    <button type="button" className='bg-blue-700 absolute bottom-5  py-2 px-10 rounded-md'>view</button>
                     </Link>
-                </div>
             </div>
         </>
     )

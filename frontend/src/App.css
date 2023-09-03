@@ -1,1 +1,8 @@
 
+.on{
+    @apply bg-blue-900 rounded-md p-4
+}
+.off{
+    
+    @apply hover:bg-slate-800 rounded-md p-4
+}

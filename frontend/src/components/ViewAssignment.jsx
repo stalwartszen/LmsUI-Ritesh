@@ -1,53 +1,56 @@
-import { useParams, Link,Outlet, useNavigate } from "react-router-dom";
-import Data from "../data.json";
 import {
-  ArrowLeftCircleIcon,
-  ChevronDoubleLeftIcon,
-} from "@heroicons/react/24/solid";
+  useParams,
+  NavLink,
+  Link,
+  Outlet,
+  useNavigate,
+} from "react-router-dom";
+import Data from "../data.json";
+import { ArrowLeftCircleIcon } from "@heroicons/react/24/solid";
 import React, { useState } from "react";
-
 
 const ViewAssignment = () => {
   const { id } = useParams();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const singleAssigment = Data.filter((a) => a.id === id);
-  const Dataobj = singleAssigment[0];
-
-
-  const handleSelect =(e) =>{
-    const route = e.target.value
-    navigate(`/admin/classroom/${id}/${route}`)
+  const NavStyle = ({ isActive, isPending }) =>{
+   return isPending ? "off" : isActive ? "on" : ""
   }
+
 
   return (
     <>
-      <div className="p-10 rounded-lg bg-slate-900">
-        <div className="flex pb-5 items-center j">
-          <div className="flex-1 flex items-center">
-            <Link to={"/admin/classroom"}>
-              <button className="btn-sm p-2 rounded-md">
-                <ArrowLeftCircleIcon className="w-9 text-blue-600" />
-              </button>
+      <div className="pt-5 gap-8 h-full flex rounded-lg">
+        <div className="flex flex-col pt-5 items-center gap-3">
+          <div className="flex">
+            <Link to={"./"}>
+              <ArrowLeftCircleIcon className="w-9 mr-5 text-blue-600" />
             </Link>
-            <div className="ml-5">
-              <h1 className="text-2xl">{Dataobj && Dataobj.Subject}</h1>
-              <p className="text-slate-400">{Dataobj && Dataobj.Teacher}</p>
+            <div>
+              <h1 className="text-xl">Mathematics</h1>
+              <p className="text-slate-600">Gapat rao apte</p>
             </div>
           </div>
-          {/* <ChevronDoubleLeftIcon className='w-7'/> */}
-          <select  
-            onChange={handleSelect}
-            className="select-md bg-slate-800 outline-none rounded-md" name="" id="">
-            <option className="p-1" value="assigments">Assigments</option>
-            <option value="modules">Modules</option>
-          </select>
+
+          <div className=" rounded-lg pt-5  flex flex-col gap-2 w-[200px] h-auto">
+            <NavLink
+               className={({isActive}) => isActive ? "on" : 'off'}
+               to={'/admin/classroom/${id}/modules'}
+            >
+              <p>Modules</p>
+            </NavLink>
+            <NavLink
+               className={({isActive}) => isActive ? "on" : 'off'}
+               to={'/admin/classroom/${id}/assignments'}
+            >
+              <p>Assignments</p>
+            </NavLink>
+          </div>
         </div>
 
-
-        <div className=" h-full">
-            <Outlet></Outlet>
+        <div className="h-full flex-1">
+          <Outlet></Outlet>
         </div>
       </div>
     </>

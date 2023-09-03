@@ -172,10 +172,9 @@ const Testpage = () => {
       }
   
     return (
-        <div>
+        <div className="p-5 border-slate-700 h-full flex flex-col gap-3 rounded-xl border bg-slate-900 ">
             <div className='flex'>
-                <h1>Quiz App</h1>
-               
+                <h1 className='text-xl px-5'>Practice Test</h1>
             </div>
             
 
@@ -219,9 +218,17 @@ const Testpage = () => {
               <p className='w-64 bg-sky-800'>Marks received: {marksReceived}</p>
             </div>
           ) : (
-            <div className='container w-96 mx-auto p-4 m-4'>
-              <p>Quiz has not started yet.</p>
-              <button className='btn bg-sky-500' onClick={startQuiz}>Start Quiz</button>
+            <div className='w-3/5 m-auto p-10 bg-[#3769ff4a] rounded-xl'>
+              <h1 className='text-lg'>Test Will Started Soon.</h1>
+              <ol className='list-disc rounded-lg my-10 p-5 px-10 border'>
+                <h1 className='text-lg'>Instructions</h1>
+                <li className=''>Attend all questions</li>
+                <li className=''>Each question have 2 marks each</li>
+                <li className=''>Read question properly before typing answer</li>
+                <li className=''>Don't change the screen</li>
+                <li className=''>Avoid answering more questions</li>
+              </ol>
+              <button className='btn capitalize font-medium bg-blue-600 text-white border-none ' onClick={startQuiz}>Start Quiz</button>
             </div>
           )}
         </div>

@@ -10,8 +10,14 @@
 }
 
 .active{
-  @apply bg-blue-900 rounded-md
+  border-bottom: 2px solid #1100ff;
 }
+
+.nav{
+  @apply hover:bg-blue-900 p-3 rounded-md
+}
+
+
 
 body{
   color: white;
